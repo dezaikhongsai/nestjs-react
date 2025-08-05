@@ -20,7 +20,6 @@ export class RefreshTokenGuard implements CanActivate {
         secret: jwtOptions.refreshSecret,
       });
       
-      // Gán payload vào request để sử dụng trong controller
       request['user'] = payload;
       return true;
     } catch (error) {

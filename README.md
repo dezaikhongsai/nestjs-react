@@ -18,3 +18,5 @@ Cập nhật ngày : 05/08/2025
 - Cơ chế authentication, accessToken + refreshToken
 
 Cập nhật ngày 05/08/2025
+
+3. Phân quyền (Role base access controll <rbac>)

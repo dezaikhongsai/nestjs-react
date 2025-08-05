@@ -7,7 +7,6 @@ import { RefreshTokenGuard } from './guards/refresh-token.guard';
 import { CurrentUser } from 'src/common/decorators/auth.decorator';
 import { RefreshTokenDto } from './dto/refresh-token.dto';
 
-
 @Controller('auth')
 export class AuthController {
     constructor(private authService : AuthService ) {}
