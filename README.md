@@ -20,3 +20,7 @@ Cập nhật ngày : 05/08/2025
 Cập nhật ngày 05/08/2025
 
 3. Phân quyền (Role base access controll <rbac>)
+
+4. Chọn đề tài chủ đạo
+
+- Quản lý chuyến đi ()

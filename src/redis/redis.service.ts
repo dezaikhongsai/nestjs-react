@@ -9,8 +9,6 @@ export class RedisService  implements OnModuleInit, OnModuleDestroy {
             host : process.env.REDIS_HOST || 'localhost',
             port : Number(process.env.REDIS_PORT) || 6379,
         })
-        this.client.on('connect' , () => console.log("Redis connected successfully!"));
-        this.client.on('error' , (err) => console.error("Redis connection error:", err));
     }
 
     async setOtp(email: string, otp: string, ttlSeconds = 300) {
