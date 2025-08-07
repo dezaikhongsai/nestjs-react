@@ -12,7 +12,7 @@ async function bootstrap() {
   app.setGlobalPrefix(API_PREFIX);
   app.useGlobalFilters(new AllExceptionsFilter());
   
-  await app.listen(process.env.PORT ?? 3000);
+  await app.listen(process.env.PORT ?? 3000 , '0.0.0.0');
 
   console.log(`Application is running on: http://localhost:${process.env.PORT ?? 8081}`);
 }
