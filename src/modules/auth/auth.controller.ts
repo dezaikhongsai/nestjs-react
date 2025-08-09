@@ -4,13 +4,14 @@ import {  LoginDto, RegisterDto, UserPayload } from './dto';
 import { ApiResponse } from 'src/common/configs';
 import { JwtAuthGuard } from './guards/auth.guard';
 import { RefreshTokenGuard } from './guards/refresh-token.guard';
-import { CurrentUser } from 'src/common/decorators/auth.decorator';
+import { CurrentUser, Public } from 'src/common/decorators/auth.decorator';
 import { RefreshTokenDto } from './dto/refresh-token.dto';
 
 @Controller('auth')
 export class AuthController {
     constructor(private authService : AuthService ) {}
 
+    @Public()
     @Post('register')
     @HttpCode(HttpStatus.CREATED)
     async registerController(@Body() data : RegisterDto ) {
@@ -23,6 +24,7 @@ export class AuthController {
         } as ApiResponse<typeof newUser>;  
     }
 
+    @Public()
     @Patch('active')
     async activeUserController(@Body() data : {email : string , otp : string}) {
         const activateUser = await this.authService.ativeUser(data.email , data.otp);
@@ -33,6 +35,7 @@ export class AuthController {
         } as ApiResponse<typeof activateUser>
     }
 
+    @Public()
     @Post('login')
     @HttpCode(HttpStatus.OK)
     async loginController (@Body() data : LoginDto) {
@@ -44,7 +47,6 @@ export class AuthController {
         } as ApiResponse<typeof loginRes>;
     }
 
-    @UseGuards(JwtAuthGuard)
     @Get('me')
     getMe(@CurrentUser() user : UserPayload) {
         return {
@@ -68,7 +70,6 @@ export class AuthController {
         } as ApiResponse<typeof res>
     }
 
-    @UseGuards(JwtAuthGuard)
     @Patch('logout')
     async logoutController(@CurrentUser() user: UserPayload) {
         await this.authService.logout(user.id);
