@@ -1,3 +1,5 @@
+# Backend Quản lý tài chính tích hợp AI
+
 ## Xây dựng chức năng đăng nhập và đăng ký người dùng
 
 ### Các công nghệ sử dụng
@@ -23,4 +25,5 @@ Cập nhật ngày 05/08/2025
 
 4. Chọn đề tài chủ đạo
 
-- Quản lý chuyến đi ()
+- Quản lý tài chính tích hợp AI
+-
