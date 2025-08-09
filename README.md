@@ -1,29 +1,32 @@
-# Backend Quản lý tài chính tích hợp AI
+# Backend Quản lý tài chính cá nhân tích hợp AI
 
-## Xây dựng chức năng đăng nhập và đăng ký người dùng
-
-### Các công nghệ sử dụng
+## Các công nghệ sử dụng
 
 - Nestjs
 - Postgress + Redis
 - Prisma
 - Docker
 
+## Phạm vi
+
+- Xây dựng backend tích hợp cho web (admin dashboard) + mobile (user)
+
+### Xây dựng chức năng đăng nhập, đăng ký người dùng + phân quyền
+
 1. Đăng ký
 
 - Cơ chế xác thực thông qua gửi mã otp qua email
-
-Cập nhật ngày : 05/08/2025
 
 2. Đăng nhập
 
 - Cơ chế authentication, accessToken + refreshToken
 
-Cập nhật ngày 05/08/2025
+3. Phân quyền (Role base access controll -- RBAC)
 
-3. Phân quyền (Role base access controll <rbac>)
+- Tạo decorator cho role (phân quyền)
+- Chia tách public route và private route ( public / jwt )
 
-4. Chọn đề tài chủ đạo
+### Xây dựng tính năng quản lý người dùng
 
-- Quản lý tài chính tích hợp AI
--
+- CRUD user
+- Đổi mật khẩu xác thực qua OTP (Chưa làm)
